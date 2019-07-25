@@ -1,0 +1,51 @@
+name: 3 Tier Demo Application
+version: 1
+formatVersion: 1
+inputs:
+  environment:
+    type: string
+    enum:
+      - AWS
+      - vSphere
+      - Azure
+      - VMC
+      - GCP
+    default: GCP
+  sshKey:
+    type: string
+    encrypted: true
+  envsize:
+    type: string
+    enum:
+      - Small
+      - Large
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: myimage-ubuntu-1804
+      flavor: gcp-myflavor
+      constraints:
+        - tag: 'platform:gcp'
+  Cloud_Machine_2:
+    type: Cloud.Machine
+    properties:
+      image: myimage-ubuntu-1804
+      flavor: gcp-myflavor
+      constraints:
+        - tag: 'platform:gcp'
+  Cloud_Machine_3:
+    type: Cloud.Machine
+    properties:
+      image: myimage-ubuntu-1804
+      flavor: gcp-myflavor
+      constraints:
+        - tag: 'platform:gcp'
+  Cloud_Machine_4:
+    type: Cloud.Machine
+    properties:
+      image: myimage-ubuntu-1804
+      flavor: gcp-myflavor
+      constraints:
+        - tag: 'platform:gcp'
+
